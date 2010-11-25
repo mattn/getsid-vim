@@ -41,6 +41,10 @@
 "
 "    UseGetSID
 "
+"  Then
+"
+"    let mysid =  s:GetSID()
+"
 function! GetSID(n)
   redir => out | silent! scriptnames | redir END
   return index(map(split(out,"\n"),"substitute(v:val,'^[^:]*:\\s*\\(.*\\)$','\\1','')"),a:n)+1
